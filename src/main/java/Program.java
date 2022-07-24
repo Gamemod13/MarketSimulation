@@ -11,7 +11,7 @@ public class Program {
      */
     public static void main(String[] args) {
     SystemMenu systemMenu = new SystemMenu();
-    systemMenu.buyingProduct();
+    systemMenu.userBuyProduct();
     systemMenu.menu();
     }
 }

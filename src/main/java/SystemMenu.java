@@ -28,7 +28,7 @@ import java.util.Scanner;
  * <p>5. Display list of users that bought product by product id (If
  * nobody bought this product yet, don't show anything)</p>
  * @author Gamemod13
- * @version 1.0
+ * @version 1.1
  */
 public class SystemMenu {
     /**
@@ -145,7 +145,6 @@ public class SystemMenu {
         System.out.println("Enter the Product ID:");
         Scanner in = new Scanner(System.in);
         Integer iD = in.nextInt();
-        in.close();
         boolean findList = false;
         for(UserList list: this.systemUserLists){
             if(list.getiD().equals(iD)){
@@ -159,45 +158,82 @@ public class SystemMenu {
     }
     /**
      * Method - purchasing product with some product ID by user with some user ID
-     * @deprecated it is necessary to break the method into simpler methods
      */
-    public void buyingProduct(){
+    public void userBuyProduct(){
         System.out.println("Enter User ID:");
         Scanner in = new Scanner(System.in);
         Integer userID = in.nextInt();
         System.out.println("Enter Product ID:");
         Integer productID = in.nextInt();
-        for(User user: this.systemUsers){
-            if(user.getID().equals(userID)){
-                for(Product product: this.systemProducts){
-                    if(product.getID().equals(productID)){
-                        if(user.buyingProduct(product)){
-                            System.out.println("Successful purchase!");
-                            for(ProductList productList: this.systemProductLists){
-                                if(productList.getiD().equals(userID)){
-                                    productList.addProduct(product);
-                                }
-                            }
-                            for(UserList userList: this.systemUserLists){
-                                if(userList.getiD().equals(productID)){
-                                    userList.addUser(user);
-                                }
-                            }
-
-                        }
-                        else {
-                            try {
-                                throw new MyException();
-                            }
-                            catch (MyException e) {
-                                e.MyException();
-                            }
-                        }
-                    }
-                }
-            }
+        if(findUser(userID)&&findProduct(productID)){
+            userBuyProduct(userID,productID);
         }
 
+    }
+    /**
+     * Method - check user ID in this system, if it finds - return true, if not - false.
+     * Its private method - part of logic userBuyProduct
+     * @param userID param with method "userBuyProduct"
+     * @return boolean searching result
+     */
+    private boolean findUser(Integer userID){
+        for(User user: this.systemUsers) {
+            if (user.getID().equals(userID)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * Method - check product ID in this system, if it finds - return true, if not - false.
+     * Its private method - part of logic userBuyProduct
+     * @param productID param with method "userBuyProduct"
+     * @return boolean searching result
+     */
+    private boolean findProduct(Integer productID){
+        for(Product product: this.systemProducts) {
+            if (product.getID().equals(productID)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    /**
+     * Method - call User method to buy product and add Product and User to
+     * relevant userList and productList, if purchase can't be complete - call method
+     * throwMyException
+     * Its private method - part of logic userBuyProduct
+     * @param userID param with method "userBuyProduct"
+     * @param productID param with method "userBuyProduct"
+     */
+    private void userBuyProduct(Integer userID, Integer productID) {
+        if (this.systemUsers.get(userID).buyingProduct(this.systemProducts.get(productID))) {
+            System.out.println("Successful purchase!");
+            for (ProductList productList : this.systemProductLists) {
+                if (productList.getiD().equals(userID)) {
+                    productList.addProduct(this.systemProducts.get(productID));
+                }
+            }
+            for (UserList userList : this.systemUserLists) {
+                if (userList.getiD().equals(productID)) {
+                    userList.addUser(this.systemUsers.get(userID));
+                }
+            }
+        } else {
+            throwMyException();
+        }
+    }
 
+    /**
+     * Method catch's exception
+     * Its private method - part of logic userBuyProduct
+     */
+    private void throwMyException() {
+        try {
+            throw new MyException();
+        }
+        catch (MyException e) {
+            e.MyException();
+        }
     }
 }
