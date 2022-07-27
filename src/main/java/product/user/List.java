@@ -1,3 +1,5 @@
+package product.user;
+
 import java.util.ArrayList;
 /**
  * The class was created to contain an array of names
@@ -11,7 +13,7 @@ public class List {
     private Integer iD;
     /**Class Member - ArrayList -
      container for string type names  */
-    private ArrayList<String> nameList= new ArrayList<String>();
+    private ArrayList<String> nameList= new ArrayList<>();
 
     /**Constructor - accept Integer ID of list owner
      * @param iD Integer of owner

@@ -1,3 +1,5 @@
+package product.user;
+
 import org.jetbrains.annotations.NotNull;
 /**
  * The class creates a user with unique static identifier <b>S_ID</b> and

@@ -1,3 +1,5 @@
+package product.user;
+
 /**
  * The class stores the names of all users, who purchase product with given ID,
  * extends from Class List

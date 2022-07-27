@@ -1,3 +1,5 @@
+package product.user;
+
 /**
  * The class creates a product with unique static identifier <b>S_ID</b> and
  * parameters:

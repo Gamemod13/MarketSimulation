@@ -1,3 +1,5 @@
+package product.user;
+
 /**
  * The class was created to call and display a
  * custom exception according to the terms of reference
