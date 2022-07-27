@@ -24,6 +24,6 @@ work with these objects.
 
 Run the program from this [class][3]
 
-[1]: (https://drive.google.com/file/d/1X1dHmsvP_Vy9UzqKDLbQ-d8AD3kFRVaO/view)
-[2]: (https://github.com/Gamemod13/Test_Task/blob/bcdb28df2d5a9e6a337fe0952206f2e6f426adbf/src/main/java/product/user)
-[3]: (https://github.com/Gamemod13/Test_Task/blob/bcdb28df2d5a9e6a337fe0952206f2e6f426adbf/src/main/java/Program.java)
+[1]: https://docs.google.com/document/d/1xqtEUk1s0R408-3cGjJC5fHUq-vYXHyqWAjSfOCEIvY/edit?usp=sharing
+[2]: https://github.com/Gamemod13/Test_Task/blob/7cf790c15b091bb2d125d85f3919149ad8cbd440/src/main/java/product/user
+[3]: https://github.com/Gamemod13/Test_Task/blob/bcdb28df2d5a9e6a337fe0952206f2e6f426adbf/src/main/java/Program.java
