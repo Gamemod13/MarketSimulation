@@ -13,7 +13,7 @@ when user haven't enough money to bough some
 product. 
 Class __SystemMenu__ - provides services with other
 objects, all logic implement in this class.
-Class __Program__ - consist method main some
+Class __Program__ - consist method _main_ with some
 statements:
 1. Create object __SystemMenu__ with all
 products and users, add to list it.
