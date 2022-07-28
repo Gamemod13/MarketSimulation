@@ -22,14 +22,14 @@ public class UserList extends List{
     public void addUser(User user){
         super.addToList(user.getFirstName()+ " " + user.getLastName());
     }
-    /**
+    /*
      * Method - print all users name, who bought the product
      * @param iD ID of product owner
      */
-    @Override
-    public void getAllList(Integer iD){
-        super.getAllList(iD);
-    }
+    //@Override
+    //public void getAllList(Integer iD){
+    //    super.getAllList(iD);
+    //}
     /**
      * Method - override List method, used in Method getAllList and print
      * who own of this list

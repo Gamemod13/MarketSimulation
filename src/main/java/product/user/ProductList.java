@@ -23,14 +23,14 @@ public class ProductList extends List {
     public void addProduct(Product product){
         super.addToList(product.getName());
     }
-    /**
+    /*
      * Method - print all purchased products
      * @param iD ID of user owner
      */
-    @Override
-    public void getAllList(Integer iD){
-        super.getAllList(iD);
-    }
+    //@Override
+    //public void getAllList(Integer iD){
+        // super.getAllList(iD);
+    //}
     /**
      * Method - override List method, used in Method getAllList and print
      * who own of this list

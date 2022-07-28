@@ -36,19 +36,19 @@ public class SystemMenu {
     /**
      * Member - systemUser add to list all users in system
      */
-    private ArrayList<User> systemUsers = new ArrayList<>();
+    private final ArrayList<User> systemUsers = new ArrayList<>();
     /**
      * Member - systemProductLists add all Product lists in system
      */
-    private ArrayList<ProductList> systemProductLists = new ArrayList<>();
+    private final ArrayList<ProductList> systemProductLists = new ArrayList<>();
     /**
      * Member - systemProduct add to list all product in system
      */
-    private ArrayList<Product> systemProducts = new ArrayList<>();
+    private final ArrayList<Product> systemProducts = new ArrayList<>();
     /**
      * Member - systemUserLists add all User lists in system
      */
-    private ArrayList<UserList> systemUserLists = new ArrayList<>();
+    private final ArrayList<UserList> systemUserLists = new ArrayList<>();
 
     /**
      * Constructor - create 3 users, 3 products, all ArrayLists and members SystemMenu class
@@ -61,7 +61,7 @@ public class SystemMenu {
         Product peanut = new Product("Peanut", 20.D);
         this.systemProducts.add(peanut);
         this.systemUserLists.add(new UserList(peanut));
-        Product banana = new Product("Apple", 12.D);
+        Product banana = new Product("Banana", 12.D);
         this.systemProducts.add(banana);
         this.systemUserLists.add(new UserList(banana));
 
@@ -169,8 +169,44 @@ public class SystemMenu {
         Integer productID = in.nextInt();
         if(findUser(userID)&&findProduct(productID)){
             userBuyProduct(userID,productID);
+        } else if (findUser(userID)) {
+            productNotFound(productID);
+            userBuyProduct();
+        } else if (findProduct(productID)) {
+            userNotFound(userID);
+            userBuyProduct();
+        }else {
+            userNotFound(userID);
+            productNotFound(productID);
+            userBuyProduct();
         }
-
+    }
+    /**
+     * Method - print message if user with this ID doesn't exist
+     * Its private method - part of logic userBuyProduct
+     * @param iD entered user ID
+     */
+    private void userNotFound(Integer iD){
+        System.out.println("User with ID " + iD +
+                " is not found!");
+        checkMessage();
+    }
+    /**
+     * Method - print message if product with this ID doesn't exist
+     * Its private method - part of logic userBuyProduct
+     * @param iD entered product ID
+     */
+    private void productNotFound(Integer iD){
+        System.out.println("Product with ID " + iD +
+                " is not found!");
+        checkMessage();
+    }
+    /**
+     * Method - print call to check ID
+     * Its private method - part of logic userBuyProduct
+     */
+    private void checkMessage(){
+        System.out.println("Please, check ID and try again!");
     }
     /**
      * Method - check user ID in this system, if it finds - return true, if not - false.

@@ -10,10 +10,10 @@ import java.util.ArrayList;
  */
 public class List {
     /**Class Member - ID of list owner */
-    private Integer iD;
+    private final Integer iD;
     /**Class Member - ArrayList -
      container for string type names  */
-    private ArrayList<String> nameList= new ArrayList<>();
+    private final ArrayList<String> nameList= new ArrayList<>();
 
     /**Constructor - accept Integer ID of list owner
      * @param iD Integer of owner
