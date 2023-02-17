@@ -1,4 +1,4 @@
-# Test_Task #
+# MarketSimulation #
 ### Test task to Java course
 This program realizes test task from this [link][1].
 I create a [package][2] with all my auxiliary classes.
